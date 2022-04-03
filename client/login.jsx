@@ -30,7 +30,7 @@ const handleSignup=(e)=>{
     helper.sendPost(e.target.action,{user,pass,word,_csrf});
     return false;
 }
-const loginWindow=(props)=>{
+const LoginWindow=(props)=>{
     return(
         <form id="loginForm" name="loginForm"
         onSubmit={handleLogin} action="/login"
@@ -44,7 +44,7 @@ const loginWindow=(props)=>{
         </form>
     );
 };
-const signupWindow=(props)=>{
+const SignupWindow=(props)=>{
     return(
         <form id="signupForm" name="signupForm"
         onSubmit={handleSignup} action="/signup"
