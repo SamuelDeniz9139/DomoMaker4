@@ -9,7 +9,7 @@ const handleDomo=(e)=>{
         helper.handleError('All fields are required.');
         return false;
     }
-    sendPost(e.target.action, {name,age,_csrf}, loadDomosFromServer);
+    helper.sendPost(e.target.action, {name,age,_csrf}, loadDomosFromServer);
     return false;
 }
 const DomoForm=(props)=>{
