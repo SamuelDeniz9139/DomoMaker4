@@ -1,10 +1,8 @@
 const models = require('../models');
+
 const { Account } = models;
 const loginPage = (req, res) => {
-  res.render('login', { csrfToken: req.csrfToken() })
-};
-const getToken = (req, res) => {
-  return res.json({ csrfToken: req.csrfToken() })
+  res.render('login', { csrfToken: req.csrfToken() });
 };
 const logout = (req, res) => {
   req.session.destroy();
@@ -47,10 +45,13 @@ const signup = async (req, res) => {
     return res.status(400).json({ error: 'An error occurred.' });
   }
 };
+const getToken = (req, res) => {
+  return res.json({csrfToken: req.csrfToken()});
+};
 module.exports = {
   loginPage,
-  getToken,
   login,
   logout,
   signup,
+  getToken,
 };

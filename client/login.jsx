@@ -17,17 +17,17 @@ const handleSignup=(e)=>{
     helper.hideError();
     const user=e.target.querySelector('#user').value;
     const pass=e.target.querySelector('#pass').value;
-    const word=e.target.querySelector('#pass2').value;
+    const pass2=e.target.querySelector('#pass2').value;
     const _csrf=e.target.querySelector('#_csrf').value;
-    if(!user||!pass||!word){
+    if(!user||!pass||!pass2){
         helper.handleError('All fields are required.');
         return false;
     }
-    if(pass!==word){
+    if(pass!==pass2){
         helper.handleError('Passwords must match.');
         return false;
     }
-    helper.sendPost(e.target.action,{user,pass,word,_csrf});
+    helper.sendPost(e.target.action,{user,pass,pass2,_csrf});
     return false;
 }
 const LoginWindow=(props)=>{
