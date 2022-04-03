@@ -17,7 +17,7 @@ const handleSignup=(e)=>{
     helper.hideError();
     const user=e.target.querySelector('#user').value;
     const pass=e.target.querySelector('#pass').value;
-    const word=e.target.querySelector('#word').value;
+    const word=e.target.querySelector('#pass2').value;
     const _csrf=e.target.querySelector('#_csrf').value;
     if(!user||!pass||!word){
         helper.handleError('All fields are required.');
@@ -53,8 +53,8 @@ const SignupWindow=(props)=>{
             <input id="user" type="text" name="username" placeholder="Username" />
             <label htmlFor="pass">Password: </label>
             <input id="pass" type="password" name="pass" placeholder="Password" />
-            <label htmlFor="word">Password: </label>
-            <input id="word" type="password" name="word" placeholder="Retype Password" />
+            <label htmlFor="pass2">Password: </label>
+            <input id="pass2" type="password" name="pass2" placeholder="Retype Password" />
             <input id="_csrf" type="hidden" name="_csrf" value={props.csrf} />
             <input className="formSubmit" type="submit" value="Sign in" />
         </form>
